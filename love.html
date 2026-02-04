@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavya ❤️ Satya Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to top, #ff9a9e, #fad0c4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Great Vibes', cursive;
+    color: #fff;
+    text-align: center;
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(-45deg);
+    animation: float 5s linear infinite;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  .heart:before, .heart:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+  }
+  .heart:before { top: -10px; left: 0; }
+  .heart:after { left: 10px; top: 0; }
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(-45deg); opacity:1; }
+    100% { transform: translateY(-700px) rotate(-45deg); opacity:0; }
+  }
+
+  /* Heart-shaped photo */
+  .photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    margin-top: 20px;
+  }
+  .photo img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Proposal text */
+  #proposal {
+    font-size: 2.5em;
+    opacity: 0;
+    transition: 2s;
+    margin-top: 20px;
+  }
+
+  /* Ring animation */
+  .ring {
+    width: 100px;
+    height: 100px;
+    border: 5px solid gold;
+    border-radius: 50%;
+    position: relative;
+    animation: ringPulse 2s infinite;
+    display: none;
+    margin-top: 20px;
+  }
+  @keyframes ringPulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px gold; }
+    50% { transform: scale(1.2); box-shadow: 0 0 30px gold; }
+    100% { transform: scale(1); box-shadow: 0 0 10px gold; }
+  }
+
+  /* Emotional journey and promises */
+  .journey {
+    opacity: 0;
+    max-width: 500px;
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Floating hearts will appear automatically -->
+
+<!-- Heart-shaped photo -->
+<div class="photo">
+  <img src="photo.jpg.jpeg" alt="Kavya & Satya">
+</div>
+
+<!-- Ring -->
+<div class="ring"></div>
+
+<!-- Proposal Text -->
+<div id="proposal">Satya… Will you marry me? 💖</div>
+
+<!-- Emotional Journey & Promises -->
+<div class="journey" id="journey">
+  <p>My love, from the moment we met, every day with you has been magical. 🥹</p>
+  <p>Through every smile, every struggle, every laughter, I want to continue this journey with you forever. 💕</p>
+  <p>I promise to always love you, support you, respect you, and be your companion in every moment of life. 🌹</p>
+  <p>I promise to make you smile, stand by you in hardships, and cherish our memories forever. 💌</p>
+</div>
+
+<!-- Background music -->
+<audio autoplay loop>
+  <source src="song.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Floating hearts
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.animationDuration = 3 + Math.random() * 5 + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+  setInterval(createHeart, 300);
+
+  // Show proposal, ring, and journey text
+  setTimeout(() => {
+    document.getElementById('proposal').style.opacity = 1;
+    document.querySelector('.ring').style.display = 'block';
+    document.getElementById('journey').style.opacity = 1;
+  }, 3000); // 3 seconds delay
+</script>
+
+</body>
+</html>
